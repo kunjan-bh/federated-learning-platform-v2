@@ -460,6 +460,7 @@ def diabetes(request):
             # Convert to 2D array for model
             print(features)
             features_array = np.array(features).reshape(1, -1)
+            print(1)
             with open("../../pkl files/diabetes_model.pkl", "rb") as f:
                 diabetes_model = pickle.load(f)
             # Predict
@@ -467,6 +468,7 @@ def diabetes(request):
             probability = diabetes_model.predict_proba(features_array)[0][1]  # probability of diabetes=1
             print("Probability:", probability)
             print(diabetes_prediction)
+            
 
             return Response({
             "diabetes": int(diabetes_prediction),

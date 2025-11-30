@@ -7,14 +7,19 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+---
+
+# Dependencies and Build Artifacts
 node_modules
 dist
 dist-ssr
 *.local
 
+---
+
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
+!.vscode/extensions.json  # Note: The '!' keeps this specific file tracked
 .idea
 .DS_Store
 *.suo
@@ -23,19 +28,30 @@ dist-ssr
 *.sln
 *.sw?
 
+---
+
 # Python virtual environments
+# Ignore venv in the frontend folder
 frontend/venv/
+# Ignore venv in the root (if it exists)
 venv/
+# 🎯 New: Ignore venv in the backend folder
+backend/venv/
+
+---
 
 # Byte-compiled / cache files
 __pycache__/
 *.pyc
 *.pyo
 
+---
+
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+
+---
 
 # OS files
 .DS_Store
 Thumbs.db
-

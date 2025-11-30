@@ -16,12 +16,12 @@ const MLServices = () => {
     const [heartDiseaseValue, setHeartDiseaseValue] = useState("");
     const [bmi, setBmi] = useState("");
     const [physHlth, setPhysHlth] = useState("");
-    const[diabetesReply, setDiabetesReply] = useState("");
+    const [diabetesReply, setDiabetesReply] = useState(2);//default value
     const handleSubmitDiabetes = async (e) => {
         e.preventDefault();
         const formdata = {
             genHlth: genHlth,
-            highBP: highBP, 
+            highBP: highBP,
             highChol: highChol,
             age: age,
             cholCheck: cholCheck,
@@ -135,6 +135,7 @@ const MLServices = () => {
                                     onChange={(e) => setBmi(e.target.value)}
                                     required
                                 />
+                                <small>For reference, you can access BMI calculater <a href="https://www.nhlbi.nih.gov/calculate-your-bmi" target="_blank">here</a></small>
 
                                 {/* Age */}
                                 <label>Age Group</label>
@@ -170,6 +171,7 @@ const MLServices = () => {
                                     <option value="0">No</option>
                                     <option value="1">Yes</option>
                                 </select>
+                                
 
                                 {/* CholCheck */}
                                 <label>Cholesterol Checked</label>
@@ -178,6 +180,7 @@ const MLServices = () => {
                                     <option value="0">No</option>
                                     <option value="1">Yes</option>
                                 </select>
+                                <small>Have you checked your cholesterol level in the last 5 years?</small>
 
                                 {/* HvyAlcoholConsump */}
                                 <label>Heavy Alcohol Consumption</label>
@@ -233,7 +236,7 @@ const MLServices = () => {
 
                         </div>
                         <div className={diabetes ? "diabetes-reply" : "close"}>
-                            {diabetesReply == "" && (
+                            {diabetesReply === 2 && (
                                 <div className="diabetes-result normal">
                                     <h3>Analyse Your Data</h3>
                                     <p>Based on the data you provided, we have analysed your health indicators and found that you are at a normal risk of developing diabetes. However, it is always a good idea to maintain a healthy lifestyle and to continue monitoring your health.</p>

@@ -87,7 +87,7 @@
 }
 .mlservice-subarea-heart,.mlservice-subarea-diabetes {
     transition-duration: 0.3s;
-    height: 140vh;
+    height: 145vh;
     width: 100%;
     padding: 20px;
     border-left: 5px solid rgb(75, 140, 238);
@@ -312,7 +312,7 @@
     height: 15vh;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .diabetes-result {

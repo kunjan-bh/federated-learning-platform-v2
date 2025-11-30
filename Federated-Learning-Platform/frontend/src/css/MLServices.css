@@ -1,0 +1,359 @@
+.mlservice {
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.mlservice-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.mlservice-content {
+    color: #000;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.mlservice-content-title h2{
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+.count-of-models{
+    text-align: center;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.count{
+    max-width: 200px;
+    min-width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.count:hover{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    cursor: pointer;
+}
+.count p{
+    font-size: 20px;
+    margin: 0;
+}
+.count span{
+    font-size: 50px;
+    margin: 0;
+    color: rgb(75, 140, 238);
+    font-family: "Nova Cut", sans-serif;
+}
+.count-span{
+    margin: 0;
+    padding: 0;
+}
+.mlservice-content-description{
+    margin-bottom: 50px;
+}
+.mlservice-area{
+    color: #000; 
+}
+.mlservice-subarea{
+    transition-duration: 0.3s;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 15vh;
+    padding: 20px;
+    border-left: 5px solid rgb(131, 143, 194);
+}
+.prediction_description p{
+    margin: 0;
+}
+.prediction_title h2{
+    margin: 0;
+}
+.mlservice-subarea:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+    border-radius: 20px;    
+}
+.mlservice-subarea:hover .prediction_title h2{
+    color: rgb(75, 140, 238);
+}
+.mlservice-subarea-heart,.mlservice-subarea-diabetes {
+    transition-duration: 0.3s;
+    height: 140vh;
+    width: 100%;
+    padding: 20px;
+    border-left: 5px solid rgb(75, 140, 238);
+    margin-bottom: 30px;
+}
+.mlservice-subarea-heart:hover,.mlservice-subarea-diabetes:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+    border-radius: 20px;    
+}
+.button-close {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button-close:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(117, 162, 230);
+  align-items: center;
+}
+
+.button-close:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.button-close::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Close";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 5px;
+}
+
+.button-close:hover::before {
+  font-size: 16px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+.button-close-hidden{
+    display: none;
+}
+.close-btn{
+    display: flex;
+    justify-content: center;
+}
+.prediction_description{
+    margin-bottom: 20px;
+}
+.prediction_description span{
+    color: rgb(204, 0, 255);
+}
+.close{
+    display: none;
+}
+/* Form container */
+.prediction-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    background-color: #f7f8fc;
+    border-radius: 15px;
+    box-shadow: rgba(99, 99, 99, 0.15) 0px 4px 12px;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+}
+
+/* Form labels */
+.prediction-form label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4b8cee; /* matching your primary theme color */
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Inputs and selects */
+.prediction-form input,
+.prediction-form select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+    transition: 0.3s;
+    background-color: #fff;
+    color: #1f2937; /* dark text */
+}
+
+.prediction-form input:focus,
+.prediction-form select:focus {
+    border-color: #4b8cee;
+    box-shadow: 0 0 8px rgba(75, 140, 238, 0.2);
+}
+
+/* Helper text */
+.prediction-form small {
+    font-size: 13px;
+    color: #555;
+    margin-top: -10px;
+}
+
+/* Predict button */
+.prediction-form .predict-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4b8cee;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.prediction-form .predict-btn:hover {
+    background-color: #3a6fc4;
+    transform: translateY(-2px);
+    box-shadow: rgba(75, 140, 238, 0.4) 0px 4px 12px;
+}
+
+/* Checkbox styling (if you add "I don't know" for glucose) */
+.prediction-form input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    accent-color: #4b8cee;
+    cursor: pointer;
+}
+
+.prediction-form input[type="checkbox"]:focus {
+    outline: 2px solid #4b8cee;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .prediction-form {
+        padding: 20px;
+    }
+
+    .prediction-form input,
+    .prediction-form select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .prediction-form .predict-btn {
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+}
+/* Ensure all inputs and selects have the same box-sizing */
+.prediction-form input,
+.prediction-form select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+    transition: 0.3s;
+    background-color: #fff;
+    color: #1f2937; /* dark text */
+    font-family: inherit; /* make font consistent */
+}
+
+/* Number input tweaks to match width exactly */
+.prediction-form input[type="number"] {
+    -moz-appearance: textfield; /* remove spinners in Firefox */
+}
+
+.prediction-form input[type="number"]::-webkit-inner-spin-button, 
+.prediction-form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* remove spinners in Chrome/Safari */
+    margin: 0;
+}
+
+/* Focus effect */
+.prediction-form input:focus,
+.prediction-form select:focus {
+    border-color: #4b8cee;
+    box-shadow: 0 0 8px rgba(75, 140, 238, 0.2);
+}
+
+
+
+.diabetes-reply {
+    /* margin-top: 20px; */
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.diabetes-result {
+    width: 90%;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.12);
+    animation: fadeIn 0.3s ease-in-out;
+    font-family: "Inter", sans-serif;
+}
+
+.diabetes-result h3 {
+    /* margin-bottom: 5px; */
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+.diabetes-result p{
+    margin: 0;
+}
+
+.diabetes-result.safe {
+    background: #e8f9ee;
+    border-left: 6px solid #2ecc71;
+    color: #1b8f4a;
+}
+.diabetes-result.normal {
+    background: #fff3f3;
+    border-left: 6px solid #4b8cee;
+    color: #4b8cee;
+}
+
+.diabetes-result.risk {
+    background: #fff3f3;
+    border-left: 6px solid #e74c3c;
+    color: #c0392b;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+

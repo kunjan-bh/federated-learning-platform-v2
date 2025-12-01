@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 const MLServices = () => {
     const [heartDisease, setHeartDisease] = useState(false);
     const [diabetes, setDiabetes] = useState(false);
+
     const [genHlth, setGenHlth] = useState("");
     const [highBP, setHighBP] = useState("");
     const [highChol, setHighChol] = useState("");
@@ -17,6 +18,19 @@ const MLServices = () => {
     const [bmi, setBmi] = useState("");
     const [physHlth, setPhysHlth] = useState("");
     const [diabetesReply, setDiabetesReply] = useState(2);//default value
+
+    const[gender,setGender]=useState("");
+    const[height, setHeight]=useState("");
+    const[weight, setWeight]=useState("");
+    const[cholesterol, setCholesterol]=useState("");
+    const[glucose, setGlucose]=useState("");
+    const[alcohol, setAlcohol]=useState("");
+    const[systolicBP, setSystolicBP]=useState("");
+    const[diastolicBP, setDiastolicBP]=useState("");
+    const[smoke, setSmoke]=useState("");
+    const[active, setActive]=useState("");
+    const[heartDiseaseReply, setHeartDiseaseReply] = useState(2);//default value
+
     const handleSubmitDiabetes = async (e) => {
         e.preventDefault();
         const formdata = {
@@ -38,6 +52,34 @@ const MLServices = () => {
             console.log(response.data.probability);
             toast.success("Diabetes prediction successful!");
             setDiabetesReply(response.data.diabetes);
+        }
+        catch (error) {
+            console.log(error);
+            toast.error("Something went wrong. Please try again.");
+        }
+
+    }
+    const handleSubmitHeartDisease = async (e) => {
+        e.preventDefault();
+        const formdata = {
+            age: age,
+            gender: gender,
+            height: height,
+            weight: weight,
+            cholesterol: cholesterol,
+            glucose: glucose,
+            alcohol: alcohol,
+            systolicBP: systolicBP,
+            diastolicBP: diastolicBP,
+            smoke: smoke,
+            active: active
+        }
+        console.log(formdata);
+        try {
+            const response = await axios.post("http://127.0.0.1:8000/heartdisease/", formdata);
+            console.log(response.data.probability);
+            toast.success("Heart Disease prediction successful!");
+            setHeartDiseaseReply(response.data.heartdisease);
         }
         catch (error) {
             console.log(error);
@@ -87,9 +129,143 @@ const MLServices = () => {
                         </div>
                         <div className="prediction_description">
                             <p>This model analyzes key cardiovascular indicators — such as blood pressure, cholesterol levels, chest pain type, and lifestyle traits — to estimate whether a patient is at risk of heart disease. Review key cardiovascular factors — such as blood pressure, cholesterol, and lifestyle traits — and <span>tap to explore your heart disease risk analysis.</span></p>
+                        </div>
+                        <div className={heartDisease ? "prediction-form" : "close"}>
+                            <form className="heart-disease-form" onSubmit={handleSubmitHeartDisease}>
+
+                                {/* AGE */}
+                                <label>Age (Years)</label>
+                                <input 
+                                    type="number"
+                                    step="1"
+                                    placeholder="Enter age in years"
+                                    value={age}
+                                    onChange={(e) => setAge(e.target.value)}
+                                    required
+                                />
+
+                                {/* GENDER */}
+                                <label>Gender</label>
+                                <select value={gender} onChange={(e) => setGender(e.target.value)} required>
+                                    <option value="">Select</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+
+                                {/* HEIGHT */}
+                                <label>Height (cm)</label>
+                                <input 
+                                    type="number"
+                                    step="1"
+                                    placeholder="e.g., 170"
+                                    value={height}
+                                    onChange={(e) => setHeight(e.target.value)}
+                                    required
+                                />
+
+                                {/* WEIGHT */}
+                                <label>Weight (kg)</label>
+                                <input 
+                                    type="number"
+                                    step="0.1"
+                                    placeholder="e.g., 65.5"
+                                    value={weight}
+                                    onChange={(e) => setWeight(e.target.value)}
+                                    required
+                                />
+
+                                {/* SYSTOLIC */}
+                                <label>Systolic Blood Pressure (Upper)</label>
+                                <input 
+                                    type="number"
+                                    step="1"
+                                    placeholder="e.g., 120"
+                                    value={systolicBP}
+                                    onChange={(e) => setSystolicBP(e.target.value)}
+                                    required
+                                />
+
+                                {/* DIASTOLIC */}
+                                <label>Diastolic Blood Pressure (Lower)</label>
+                                <input 
+                                    type="number"
+                                    step="1"
+                                    placeholder="e.g., 80"
+                                    value={diastolicBP}
+                                    onChange={(e) => setDiastolicBP(e.target.value)}
+                                    required
+                                />
+
+                                {/* CHOLESTEROL */}
+                                <label>Cholesterol Level</label>
+                                <select value={cholesterol} onChange={(e) => setCholesterol(e.target.value)} required>
+                                    <option value="">Select</option>
+                                    <option value="1">Normal</option>
+                                    <option value="2">Above Normal</option>
+                                    <option value="3">Well Above Normal</option>
+                                </select>
+
+                                {/* GLUCOSE */}
+                                <label>Glucose Level</label>
+                                <select value={glucose} onChange={(e) => setGlucose(e.target.value)} required>
+                                    <option value="">Select</option>
+                                    <option value="1">Normal</option>
+                                    <option value="2">Above Normal</option>
+                                    <option value="3">Well Above Normal</option>
+                                </select>
+
+                                {/* SMOKE */}
+                                <label>Do you smoke?</label>
+                                <select value={smoke} onChange={(e) => setSmoke(e.target.value)} required>
+                                    <option value="">Select</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+
+                                {/* ALCOHOL */}
+                                <label>Alcohol Intake</label>
+                                <select value={alcohol} onChange={(e) => setAlcohol(e.target.value)} required>
+                                    <option value="">Select</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+
+                                {/* ACTIVE */}
+                                <label>Physical Activity</label>
+                                <select value={active} onChange={(e) => setActive(e.target.value)} required>
+                                    <option value="">Select</option>
+                                    <option value="0">Low</option>
+                                    <option value="1">Active</option>
+                                </select>
+
+                                <button type="submit" className="predict-btn">Predict</button>
+
+                            </form>
 
 
                         </div>
+                        <div className={heartDisease ? "heart-disease-reply" : "close"}>
+                            {heartDiseaseReply === 2 && (
+                                <div className="heart-disease-result normal">
+                                    <h3>Analyse Your Data</h3>
+                                    <p>Based on the data you provided, we have analysed your health indicators and found that you are at a normal risk of developing heart disease. However, it is always a good idea to maintain a healthy lifestyle and to continue monitoring your health.</p>
+                                </div>
+                            )}
+                            {heartDiseaseReply === 0 && (
+                                <div className="heart-disease-result safe">
+                                    <h3>No Heart Disease Risk Detected</h3>
+                                    <p>Your current health indicators show no significant signs of heart disease risk. Maintain a balanced diet, stay active, and continue healthy habits to ensure long-term wellbeing.</p>
+                                </div>
+                            )}
+
+                            {heartDiseaseReply === 1 && (
+                                <div className="heart-disease-result risk">
+                                    <h3>Potential Heart Disease Risk</h3>
+                                    <p>Your profile indicates a higher likelihood of heart disease development. Consider improving lifestyle patterns, reducing excess sugar intake, increasing physical activity, and scheduling routine medical checkups.</p>
+                                </div>
+                            )}
+                        </div>
+
                         <div className="close-btn">
                             <button className={heartDisease ? "button-close" : "button-close-hidden"} onClick={(e) => {
                                 e.stopPropagation();

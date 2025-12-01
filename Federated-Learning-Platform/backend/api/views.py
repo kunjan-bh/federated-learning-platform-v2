@@ -479,4 +479,43 @@ def diabetes(request):
             return Response({"error": str(e)}, status=400)
 
     return Response({"error": "Invalid request method"}, status=405)
+
+@api_view(["POST"])
+def heartdisease(request):
+    if request.method == "POST":
+        try:
+            data = request.data
+            features = {
+                "age": int(data.get("age", 0)),
+                "gender": int(data.get("gender", 0)),
+                "height": int(data.get("height", 0)),
+                "weight": int(data.get("weight", 0)),
+                "systolic_pressure": int(data.get("systolicBP", 0)),
+                "diastolic_pressure": int(data.get("diastolicBP", 0)),
+                "cholesterol": int(data.get("cholesterol", 0)),
+                "glucose": int(data.get("glucose", 0)),
+                "smoker": int(data.get("smoke", 0)),
+                "alcohol": int(data.get("alcohol", 0)),
+                "active": int(data.get("active", 0)),
+            }
+            print(features)
+            features_df = pd.DataFrame([features])
+            print(1)
+            with open("../../pkl files/heartDisease.pkl", "rb") as f:
+                heartdisease_model = pickle.load(f)
+            # Predict
+            heartdisease_prediction = heartdisease_model.predict(features_df)[0]
+            probability = heartdisease_model.predict_proba(features_df)[0][1]  # probability of heartdisease=1
+            print("Probability:", probability)
+            print(heartdisease_prediction)
+            
+
+            return Response({
+            "heartdisease": int(heartdisease_prediction),
+            "probability": float(probability)
+            })
+        except Exception as e:
+            print("🔥 REAL ERROR:", repr(e))
+            return Response({"error": str(e)}, status=400)
+    return Response({"error": "Invalid request method"}, status=405)
     

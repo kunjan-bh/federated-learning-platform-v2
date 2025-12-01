@@ -21,6 +21,7 @@ urlpatterns = [
     path("client/submit-model/", views.submit_client_model, name="submit_client_model"),
     path("central-models/<int:iteration_id>/submissions/", views.current_iteration_submissions, name="current_iteration_submissions"),
     path("diabetes/", views.diabetes, name="diabetes"),
+    path("heartdisease/", views.heartdisease, name="heartdisease")
 
 
 

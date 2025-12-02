@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Left Section */}
         <div className="footer-left">
-          <h2 className="footer-logo">NeuroNode</h2>
+          <h2 className="footer-logo">FedSync</h2>
           <p className="footer-text">
             Advancing healthcare through privacy-preserving AI. 
             Our federated learning platform enables institutions to collaborate 
@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        © 2025 NeuroFed | Empowering secure, decentralized intelligence in healthcare.
+        © 2025 FedSync | Empowering secure, decentralized intelligence in healthcare.
       </div>
     </footer>
   );

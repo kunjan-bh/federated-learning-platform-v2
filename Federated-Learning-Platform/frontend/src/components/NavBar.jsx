@@ -9,8 +9,8 @@ const NavBar = () => {
         {/* Logo */}
         <Link to="/" className="logo-back" >
           <div className="logo">
-            <img src="/logo.png" alt="logo" />
-            <span>euroNode</span>
+            <img src="/Fed.png" alt="logo" />
+            <span>edSync</span>
           </div>
         </Link>
 

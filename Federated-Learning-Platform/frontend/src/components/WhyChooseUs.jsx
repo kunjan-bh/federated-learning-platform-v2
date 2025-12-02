@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
     <section className="whychooseus-section" >
       <div className="whychooseus-container" id="WhyUs">
         <h2 className="whychooseus-title" data-aos="fade-up">
-          Why Choose <span>NeuroNode</span>
+          Why Choose <span>FedSync</span>
         </h2>
         <p className="whychooseus-subtitle" data-aos="fade-up" data-aos-delay="150">
           Revolutionizing healthcare research in Nepal through Federated Learning — enabling hospitals and clinics to collaborate securely, train locally, and contribute to a powerful generalized AI model.

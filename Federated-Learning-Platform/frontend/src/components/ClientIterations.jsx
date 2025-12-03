@@ -69,8 +69,8 @@ const ClientIterations = () => {
       <aside className="sidebar">
         <div className="sidebar-header">
           <div className="logo-container">
-            <img src="/logo.png" alt="Logo" className="logo" />
-            <h1 className="logo-text">euroNode</h1>
+            <img src="/Fed.png" alt="Logo" className="logo" />
+            <h1 className="logo-text">edSync</h1>
           </div>
         </div>
 

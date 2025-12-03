@@ -12,7 +12,6 @@ const DashboardSection = () => {
       <h2 data-aos="fade-up">
         Leverage the power of <span>Federated Learning</span> for healthcare innovation
       </h2>
-
       <div className="dashboard-container">
         <div className="dashboard-image" data-aos="fade-right">
           <img src="/header.png" alt="Federated Dashboard" />

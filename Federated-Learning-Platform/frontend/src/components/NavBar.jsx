@@ -33,21 +33,25 @@ const NavBar = () => {
 
         {/* Mobile Menu */}
         <div className="menu-box">
-          <a href="#menu" id="showmenu"></a>
+          <a href="#menu" id="showmenu">
+            <img src="/bur.svg" alt="burger menu" />
+          </a>
           <div id="menu" className="menu">
-            <a href="#showmenu" className="menu-background"></a>
+            <a href="#showmenu" className="menu-background">
+              <img src="/cross.svg" alt="burger menu" />
+            </a>
             <div className="menu-content">
               <div className="menu-logo">
-                <img src="/logo.png" alt="logo" />
+                <img src="/Fedw.png" alt="logo" />
               </div>
               <div>
                 <ul>
                   <li><a href="#home">Home</a></li>
                   <li><a href="#aboutme">About Us</a></li>
-                  <li><a href="#projects">Offerings</a></li>
-                  <li><a href="#publication">Publications</a></li>
-                  <li><a href="#awards">Recognitions</a></li>
-                  <li><a href="/login" className="menu-btn">Get Started</a></li>
+                  <li><a href="#dash">Offerings</a></li>
+                  <li><a href="#WhyUs">Why Choose Us</a></li>
+                  <li><a href="#mlservices">ML Services</a></li>
+                  {/* <li><a href="/login" className="menu-btn">Get Started</a></li> */}
                 </ul>
               </div>
             </div>

@@ -45,6 +45,8 @@
   /* Right text side */
   .dashboard-content {
     flex: 1 1 500px;
+    max-width: 700px;
+    width: 100%;
   }
   
   .dashboard-section h2 {
@@ -80,6 +82,7 @@
     display: flex;
     gap: 1rem;
     align-items: flex-start;
+    width: 100%;
   }
   
   .feature-number {
@@ -134,4 +137,47 @@
       max-width: 1400px;
     }
   }
+  @media screen and (max-width: 1300px) {
+    .dashboard-content {
+      max-width: 500px;
+    }
+    .dashboard-image {
+      max-width: 600px;
+    }
+    .dashboard-section h2 {
+      font-size: 2rem;
+      max-width: 900px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .dashboard-container{
+      max-width: 1000px;
+      width: 90vw;
+      justify-content: center;
+    }
+  }
+  @media screen and (max-width: 950px) {
+    .dashboard-section{
+      max-width: 90%;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .dashboard-section h2{
+      font-size: 1.5rem;
+    }
+    .dashboard-section{
+      max-width: 80%;
+    }
+    .dashboard-image{
+      max-width: 80%;
+    }
+    .dashboard-container{
+      width: 100%;
+    }
+    .metrics-box{
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+    
   

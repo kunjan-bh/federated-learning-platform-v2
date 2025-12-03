@@ -115,3 +115,17 @@ p {
         max-width: 1400px;
     }
 }
+@media (max-width: 1200px) {
+    .about-container {
+        padding: 20px 5%;
+    }
+    
+    
+}
+@media (max-width: 1000px) {
+    .about-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -101,3 +101,8 @@
       max-width: 1400px;
     }
   }
+  @media screen and (min-width: 1062px) {
+    .whychooseus-container{
+      justify-content: center;
+    }
+  }

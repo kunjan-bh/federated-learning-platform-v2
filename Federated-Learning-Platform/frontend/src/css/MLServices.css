@@ -87,7 +87,7 @@
 }
 .mlservice-subarea-heart,.mlservice-subarea-diabetes {
     transition-duration: 0.3s;
-    height: 145vh;
+    height: 1410px;
     width: 100%;
     padding: 20px;
     border-left: 5px solid rgb(75, 140, 238);
@@ -357,10 +357,105 @@
     border-left: 6px solid #e74c3c;
     color: #c0392b;
 }
+.mlservice-container{
+    padding: 20px;
+}
 
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
 }
+@media screen and (max-width: 1250px) {
+    .mlservice-container{
+        max-width: 1000px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .mlservice-container{
+        max-width: 90vw;
+    }
+    .mlservice-subarea{
+        height: 25vh;
+        /* width: 100%; */
+    }
+    .mlservice-area{
+        width: 90%;
+    }
+    .mlservice-container{
+        justify-content: center;
+    }
+    .count{
+        padding: 15px 15px;
+        
+    }
+    .count span{
+        font-size: 2rem;
+    }
+    .count p{
+        font-size: 1.5rem;
+    }
+    .count-of-models{
+        gap: 50px;
+    }
+    .mlservice-subarea-heart,.mlservice-subarea-diabetes{
+        height: 1460px;
+    }
+    .heart-disease-result {
+        height: 150px;
+    }
+    .heart-disease-reply {
+        height: 20vh;
+    }
+}
+@media screen and (max-width: 850px) {
+    .count-of-models{
+        flex-direction: column;
+    }
+    .mlservice-content-title h2{
+        font-size: 2rem;
+    }
+    .mlservice-subarea{
+        height: 50vh;
+    }
+    .mlservice-subarea-heart,.mlservice-subarea-diabetes{
+        height: 220vh;
+    }
+    .heart-disease-result {
+        height: 300px;
+    }
+    .diabetes-result{
+        height: 250px;
+    }
+
+    .diabetes-reply,
+    .heart-disease-reply {
+        margin-bottom: 200px;
+    }
+    .mlservice-container{
+        background-color: #f7f8fc;
+    }
+}
+@media screen and (max-width: 401px) {
+    .mlservice-subarea{
+        height: 60vh;
+    }
+    .mlservice-container{
+        max-width: 300px;
+    }
+    .mlservice-subarea-heart,.mlservice-subarea-diabetes{
+        height: 250vh;
+    }
+    .heart-disease-result {
+        height: 400px;
+    }
+    .diabetes-reply,
+    .heart-disease-reply {
+        margin-bottom: 260px;
+    }
+    .diabetes-result{
+        height: 320px;
+    }
+}
+
 

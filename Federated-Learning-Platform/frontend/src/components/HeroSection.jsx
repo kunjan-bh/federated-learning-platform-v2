@@ -1,5 +1,5 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 const HeroSection = () => {
   return (
     <section className="hero-container">
@@ -16,6 +16,11 @@ const HeroSection = () => {
                 <h2>
                 Optimize, Outperform
                 </h2>
+                <div className="nav-button-hero">
+                    <NavLink to="/signup" className="get-started-btn">
+                        Get Started
+                    </NavLink>
+                </div>
                 <div className="scroll-down">
                     <span></span><div>Scroll Down</div>
                     

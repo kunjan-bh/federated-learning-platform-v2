@@ -23,7 +23,7 @@ const AboutUs = () => {
             </div>
 
             <div className="about-image" data-aos="flip-left">
-            <img src="/ogo1.png" alt="Healthcare Federated Learning" />
+                <img src="/ogo1.png" alt="Healthcare Federated Learning" />
             </div>
 
             <div className="about-text right" data-aos="fade-left">

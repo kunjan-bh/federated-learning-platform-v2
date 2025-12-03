@@ -280,6 +280,12 @@ form input:focus {
 @media (max-width: 950px) {
   .auth-container {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .signup-box input,
+  .login-box input {
+    max-width: 90%;
   }
 
   .auth-left,

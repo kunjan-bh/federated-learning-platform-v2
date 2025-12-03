@@ -1,8 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const MLServices = () => {
+    useEffect(() => {
+        AOS.init({ duration: 600, once: true });
+    }, []);
     const [heartDisease, setHeartDisease] = useState(false);
     const [diabetes, setDiabetes] = useState(false);
 
@@ -19,17 +24,17 @@ const MLServices = () => {
     const [physHlth, setPhysHlth] = useState("");
     const [diabetesReply, setDiabetesReply] = useState(2);//default value
 
-    const[gender,setGender]=useState("");
-    const[height, setHeight]=useState("");
-    const[weight, setWeight]=useState("");
-    const[cholesterol, setCholesterol]=useState("");
-    const[glucose, setGlucose]=useState("");
-    const[alcohol, setAlcohol]=useState("");
-    const[systolicBP, setSystolicBP]=useState("");
-    const[diastolicBP, setDiastolicBP]=useState("");
-    const[smoke, setSmoke]=useState("");
-    const[active, setActive]=useState("");
-    const[heartDiseaseReply, setHeartDiseaseReply] = useState(2);//default value
+    const [gender, setGender] = useState("");
+    const [height, setHeight] = useState("");
+    const [weight, setWeight] = useState("");
+    const [cholesterol, setCholesterol] = useState("");
+    const [glucose, setGlucose] = useState("");
+    const [alcohol, setAlcohol] = useState("");
+    const [systolicBP, setSystolicBP] = useState("");
+    const [diastolicBP, setDiastolicBP] = useState("");
+    const [smoke, setSmoke] = useState("");
+    const [active, setActive] = useState("");
+    const [heartDiseaseReply, setHeartDiseaseReply] = useState(2);//default value
 
     const handleSubmitDiabetes = async (e) => {
         e.preventDefault();
@@ -92,38 +97,37 @@ const MLServices = () => {
         <div id="mlservices" className="mlservice">
             <div className="mlservice-container">
                 <div className="mlservice-content">
-                    <div className="mlservice-content-title">
+                    <div className="mlservice-content-title" data-aos="fade-up">
                         <h2>Healthcare Prediction Models (Standard ML)</h2>
                     </div>
-                    <div className="mlservice-content-description">
+                    <div className="mlservice-content-description" data-aos="fade-up">
                         <p>Review key cardiovascular factors — such as blood pressure, cholesterol, and lifestyle traits — and tap to explore your heart disease risk analysis.</p>
 
                     </div>
-                    <div className="count-of-models">
+                    <div className="count-of-models" data-aos="fade-up">
                         <div className="count">
                             <span>2+</span>
                             <div className="count-span">
                                 <p>Health Domains </p>
                             </div>
                         </div>
-                        <div className="count">
+                        <div className="count" data-aos="fade-up">
                             <span>2</span>
 
                             <div className="count-span">
-                                <p>ML Models Available</p>
+                                <p>ML Models</p>
                             </div>
                         </div>
-                        <div className="count">
+                        <div className="count" data-aos="fade-up">
                             <span>1,200+</span>
                             <div className="count-span">
                                 <p>Predictions Made</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div className="mlservice-area">
-                    <div className={heartDisease ? "mlservice-subarea-heart" : "mlservice-subarea"} onClick={() => [setHeartDisease(true), setDiabetes(false)]}>
+                    <div className={heartDisease ? "mlservice-subarea-heart" : "mlservice-subarea"} onClick={() => { setHeartDisease(true), setDiabetes(false) }}>
                         <div className="prediction_title">
                             <h2>Heart Disease Prediction</h2>
                         </div>
@@ -135,7 +139,7 @@ const MLServices = () => {
 
                                 {/* AGE */}
                                 <label>Age (Years)</label>
-                                <input 
+                                <input
                                     type="number"
                                     step="1"
                                     placeholder="Enter age in years"
@@ -154,7 +158,7 @@ const MLServices = () => {
 
                                 {/* HEIGHT */}
                                 <label>Height (cm)</label>
-                                <input 
+                                <input
                                     type="number"
                                     step="1"
                                     placeholder="e.g., 170"
@@ -165,7 +169,7 @@ const MLServices = () => {
 
                                 {/* WEIGHT */}
                                 <label>Weight (kg)</label>
-                                <input 
+                                <input
                                     type="number"
                                     step="0.1"
                                     placeholder="e.g., 65.5"
@@ -176,7 +180,7 @@ const MLServices = () => {
 
                                 {/* SYSTOLIC */}
                                 <label>Systolic Blood Pressure (Upper)</label>
-                                <input 
+                                <input
                                     type="number"
                                     step="1"
                                     placeholder="e.g., 120"
@@ -187,7 +191,7 @@ const MLServices = () => {
 
                                 {/* DIASTOLIC */}
                                 <label>Diastolic Blood Pressure (Lower)</label>
-                                <input 
+                                <input
                                     type="number"
                                     step="1"
                                     placeholder="e.g., 80"
@@ -248,7 +252,7 @@ const MLServices = () => {
                             {heartDiseaseReply === 2 && (
                                 <div className="heart-disease-result normal">
                                     <h3>Analyse Your Data</h3>
-                                    <p>Based on the data you provided, we have analysed your health indicators and found that you are at a normal risk of developing heart disease. However, it is always a good idea to maintain a healthy lifestyle and to continue monitoring your health.</p>
+                                    <p>Based on the data you provided, we have analysed your health indicators and found that you are at a normal risk of developing heart disease. However, it is always a good idea to maintain a healthy lifestyle.</p>
                                 </div>
                             )}
                             {heartDiseaseReply === 0 && (
@@ -280,7 +284,7 @@ const MLServices = () => {
                             </button>
                         </div>
                     </div>
-                    <div className={diabetes ? "mlservice-subarea-diabetes" : "mlservice-subarea"} onClick={() => [setDiabetes(true), setHeartDisease(false)]}>
+                    <div className={diabetes ? "mlservice-subarea-diabetes" : "mlservice-subarea"} onClick={() => { setDiabetes(true), setHeartDisease(false) }}>
                         <div className="prediction_title">
                             <h2>Diabetes Prediction</h2>
                         </div>
@@ -347,7 +351,7 @@ const MLServices = () => {
                                     <option value="0">No</option>
                                     <option value="1">Yes</option>
                                 </select>
-                                
+
 
                                 {/* CholCheck */}
                                 <label>Cholesterol Checked</label>
@@ -415,20 +419,20 @@ const MLServices = () => {
                             {diabetesReply === 2 && (
                                 <div className="diabetes-result normal">
                                     <h3>Analyse Your Data</h3>
-                                    <p>Based on the data you provided, we have analysed your health indicators and found that you are at a normal risk of developing diabetes. However, it is always a good idea to maintain a healthy lifestyle and to continue monitoring your health.</p>
+                                    <p>Based on the data you provided, we have analysed your health indicators and found that you are at a normal risk of developing diabetes.</p>
                                 </div>
                             )}
                             {diabetesReply === 0 && (
                                 <div className="diabetes-result safe">
                                     <h3>No Diabetes Risk Detected</h3>
-                                    <p>Your current health indicators show no significant signs of diabetes risk. Maintain a balanced diet, stay active, and continue healthy habits to ensure long-term wellbeing.</p>
+                                    <p>Your current health indicators show no significant signs of diabetes risk. Maintain a balanced diet, stay active, and continue healthy habits.</p>
                                 </div>
                             )}
 
                             {diabetesReply === 1 && (
                                 <div className="diabetes-result risk">
                                     <h3>Potential Diabetes Risk</h3>
-                                    <p>Your profile indicates a higher likelihood of diabetes development. Consider improving lifestyle patterns, reducing excess sugar intake, increasing physical activity, and scheduling routine medical checkups.</p>
+                                    <p>Your profile indicates a likelihood of diabetes development. Consider improving lifestyle, reducing excess sugar intake, and increasing physical activity.</p>
                                 </div>
                             )}
                         </div>

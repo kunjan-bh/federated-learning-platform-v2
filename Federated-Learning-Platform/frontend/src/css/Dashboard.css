@@ -253,7 +253,11 @@
     color: #666;
     line-height: 1.6;
   }
-  
+   .hospital-name {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+  }
   /* Responsive */
   @media (max-width: 768px) {
 
@@ -261,10 +265,64 @@
     .dashboard-main {
       margin-left: 80px;
     }
+    .assigned-item,
+    .assigned-left{
+      flex-direction: column;
+    }
+    .recharts-wrapper{
+      width: 70vw !important;
+      height: 30vh !important;
+    }
   }
-  .hospital-name {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.2rem;
+ 
+
+
+  @media (max-width: 480px) {
+    .dashboard-main{
+      padding: 20px 20px 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 90%;
+    }
+    .dashboard-header h2{
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .dashboard-header .role{
+      text-align: center;
+    }
+    .cards-container{
+      max-width: none;
+    }
+    .card{
+      width: 50vw;
+      min-width: 150px;
+      text-align: center; 
+    }
+    .dashboard-container1{
+      min-width: 350px;
+    }
+    .search-input{
+      max-width: 90%;
+    }
+    .assign-clients-container{
+      padding: 1rem !important;
+      min-width: 200px;
+      width: 60vw;
+      text-align: center;
+    }
+    .client-item{
+      flex-direction: column;
+    }
+    .recharts-wrapper{
+      width: 50vw !important;
+      height: 25vh !important;
+    }
+    .analytics-section p{
+      display: none;
+    }
+
   }
   

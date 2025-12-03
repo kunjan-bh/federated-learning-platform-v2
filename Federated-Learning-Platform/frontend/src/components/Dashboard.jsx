@@ -184,7 +184,7 @@ const Dashboard = () => {
           <div style={{ width: "100%", height: 300, marginTop: 30 }}>
             <h4>Models Status (Bar Chart)</h4>
             <ResponsiveContainer>
-              <BarChart data={barData}>
+              <BarChart data={barData} margin={{ top: 30, right: 20, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="model" />
                 <YAxis />

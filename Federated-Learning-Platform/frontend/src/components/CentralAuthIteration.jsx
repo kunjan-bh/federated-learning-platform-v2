@@ -247,7 +247,7 @@ const CentralAuthIteration = () => {
 
           <div className="card1 small">
             <h3>Actions</h3>
-            <div>
+            <div className="actions">
               <button className="btn" onClick={() => setShowForm((s) => !s)}>
                 {showForm ? "Close start form" : "Start new iteration"}
               </button>

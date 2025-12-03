@@ -154,7 +154,7 @@ const DashboardClient = () => {
         </div>
 
 
-        <div className="analytics-section">
+        <div className="analytics-section" id="chart-section-client">
           <h3>Participation Analysis</h3>
           <div className="charts-wrapper">
             {/* Chart 1 */}

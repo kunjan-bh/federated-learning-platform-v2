@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+    .analytics-section{
+        padding: 15px;
+    }
+    #chart-section-client p{
+        display: block;
+    }
+    #chart-section-client{
+        height: 50vh !important;
+        display: flex !important;   
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    #chart-section-client .charts-wrapper{
+        margin-top: 80px !important;
+    }
+    #chart-section-client .recharts-wrapper{
+        width: 60vw !important;
+        min-width: 200px !important;
+    }
+}
